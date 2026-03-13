@@ -323,3 +323,34 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+.section.text-animation{
+  overflow: hidden;
+  margin: 0 60px;
+}
+.text-animation ul {
+  display: flex;          
+  flex-wrap: nowrap;      
+  gap: 4rem;           
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+.text-animation ul li {
+  list-style-type: none;
+  -webkit-text-stroke: 1px #888888;
+  -webkit-text-stroke-color: #050E14;
+  opacity: 1;
+  -webkit-text-fill-color: transparent;
+  font-size: 100px;
+  margin: 0 40px;
+  flex: 0 0 auto;         /* never shrink/wrap */
+  white-space: nowrap;
+}
+
+/* simple leftward scroll */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); } /* moves the whole track left */
+}
