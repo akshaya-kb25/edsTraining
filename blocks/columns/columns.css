@@ -18,6 +18,30 @@
 .columns > div > .columns-img-col img {
   display: block;
 }
+.about-us-section .columns > div > .columns-img-col {
+  position: relative;
+}
+.about-us-section .columns > div {
+  margin: 45px;
+}
+.about-us-section .columns > div > .columns-img-col strong {
+  position: absolute;
+  bottom: 5px;
+  background: red;
+  padding: 10px 14px;
+  font-weight: 200;
+}
+.about-us-section .columns div ul {
+  list-style-type: none;
+  padding: 0;
+}
+.about-us-section .columns div ul li:nth-child(even) {
+  height: 7px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid red;
+  margin-bottom: 20px;
+}
 
 @media (width >= 900px) {
   .columns > div {

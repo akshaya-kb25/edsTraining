@@ -335,7 +335,7 @@ main .section.highlight {
   padding: 0;
   margin: 0;
   white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 .text-animation ul li {
   list-style-type: none;
@@ -345,12 +345,21 @@ main .section.highlight {
   -webkit-text-fill-color: transparent;
   font-size: 100px;
   margin: 0 40px;
-  flex: 0 0 auto;         /* never shrink/wrap */
+  flex: 0 0 auto;
   white-space: nowrap;
 }
+main p.button-wrapper {
+  display: inline-block;
+}
+main p.button-wrapper a.button.primary {
+  background: red;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 12px 20px;
+}
 
-/* simple leftward scroll */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-100%); } /* moves the whole track left */
+  to   { transform: translateX(-100%); }
 }
