@@ -42,7 +42,105 @@
   border: 1px solid red;
   margin-bottom: 20px;
 }
-
+.contact-col-section .columns > div > div {
+  box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.09);
+  padding: 40px 30px;
+  text-align: center;
+}
+.contact-col-section .columns > div > div p {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.contact-col-section .columns > div > div p a {
+  text-decoration: none;
+  color: #000;
+}
+.person-col-section .columns > div > div {
+  text-align: center;
+}
+.person-col-section .columns > div > div h2 {
+  margin: 0;
+}
+.person-col-section .columns > div > div h2 a {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+}
+.person-col-section .columns > div > div p {
+  margin: 0;
+  font-size: 16px;
+  color: red;
+}
+.person-col-section .default-content-wrapper {
+  text-align: center;
+}
+.person-col-section .default-content-wrapper h4,
+.person-col-section .default-content-wrapper h2 strong {
+  color: red;
+}
+.person-col-section .default-content-wrapper h2 {
+  margin-bottom: 30px;
+}
+.plans-3-col .columns-3-cols div > div {
+  box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.09);
+  padding: 10px 40px;
+}
+.plans-3-col .columns-3-cols div > div ul{
+  list-style-type: none;
+}
+.plans-3-col .columns-3-cols div > div ul li {
+  margin-bottom: 10px;
+}
+.plans-3-col .columns-3-cols div > div h2{
+  font-size: 20px;
+  background: red;
+  padding: 10px 20px;
+  width: 125px;
+  border-radius: 40px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.plans-3-col .columns-3-cols div > div h2::after{
+  content: "";
+  display: block;
+  border: 1px solid #ccc;
+  width: 324px;
+  position: absolute;
+  bottom: 20px;
+  z-index: -1;
+}
+main .plans-3-col .columns-3-cols p.button-wrapper a.button.primary {
+  background: transparent;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 12px 20px;
+}
+main .plans-3-col .columns-3-cols div:nth-child(2) .button-wrapper a.button.primary {
+  background-color: red;
+  color: white;
+}
+main .plans-3-col .default-content-wrapper {
+  text-align: center;
+}
+main .plans-3-col .default-content-wrapper h4 {
+  color: red;
+}
+main .plans-3-col .default-content-wrapper h2 {
+  margin-bottom: 20px;
+  margin-top: 0;
+} 
+main .plans-3-col .default-content-wrapper h2 strong {
+  color: red;
+}
+.contact-col-section .default-content-wrapper {
+  text-align: center;
+}
 @media (width >= 900px) {
   .columns > div {
     align-items: center;

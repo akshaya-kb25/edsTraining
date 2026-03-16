@@ -55,3 +55,41 @@
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
 }
+
+.tabs {
+  display: flex;
+}
+.tabs .tabs-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  margin-right: 15px;
+}
+.tabs .tabs-list button[aria-selected='true'] {
+  background-color: red;
+  color: #fff;
+}
+.tabs .tabs-panel {
+  display: flex;
+  flex-direction: column-reverse;
+  border: none;
+}
+.tabs .tabs-list button {
+  border: 0;
+  background-color: #f1f2f3;
+  border-radius: 6px;
+  padding: 25px;
+  font-weight: 600;
+}
+.tabs .tabs-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+.tabs .tabs-panel div ul li:nth-child(even) {
+  height: 7px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid red;
+  margin-bottom: 20px;
+}
