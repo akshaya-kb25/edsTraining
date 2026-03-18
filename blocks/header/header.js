@@ -3,6 +3,26 @@ import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  const image1 = document.querySelector(
+    "header .nav-brand p:nth-of-type(1) picture img"
+  );
+  const image2 = document.querySelector(
+    "header .nav-brand p:nth-of-type(2) picture img"
+  );
+  const nav = document.getElementById("nav");
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    nav.classList.add("header-changeOnscroll");
+    image2.style.display = "block";
+    image1.style.display = "none";
+  } else {
+    nav.classList.remove("header-changeOnscroll");
+    image1.style.display = "block";
+    image2.style.display = "none";
+  }
+}
+
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {

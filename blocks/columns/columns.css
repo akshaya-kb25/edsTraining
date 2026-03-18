@@ -44,7 +44,7 @@
 }
 .contact-col-section .columns > div > div {
   box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.09);
-  padding: 40px 30px;
+  padding: 25px 30px;
   text-align: center;
 }
 .contact-col-section .columns > div > div p {
@@ -57,6 +57,30 @@
 .contact-col-section .columns > div > div p a {
   text-decoration: none;
   color: #000;
+}
+.contact-col-section .columns-3-cols div div p:hover{
+  background-color: red;
+  cursor: pointer;
+}
+.contact-col-section .columns-3-cols div div p:hover a {
+  color: #fff;
+}
+.contact-col-section .columns-3-cols div div {
+  position: relative;
+}
+.contact-col-section .columns-3-cols div div::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
+  bottom: 0px;
+  left: 0px;
+}
+.contact-col-section .columns-3-cols div div:hover::before {
+  width: 100%;
+  color: red;
 }
 .person-col-section .columns > div > div {
   text-align: center;
@@ -86,7 +110,7 @@
 }
 .plans-3-col .columns-3-cols div > div {
   box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.09);
-  padding: 10px 40px;
+  padding: 20px 40px;
 }
 .plans-3-col .columns-3-cols div > div ul{
   list-style-type: none;
@@ -94,8 +118,15 @@
 .plans-3-col .columns-3-cols div > div ul li {
   margin-bottom: 10px;
 }
-.plans-3-col .columns-3-cols div > div h2{
-  font-size: 20px;
+.plans-3-col .columns-3-cols div > div h4{
+  font-size: 16px;
+  font-weight: 400;
+}
+.plans-3-col .columns-3-cols div > div h4 strong{
+  font-size: 35px;
+}
+.plans-3-col .columns-3-cols div > div h5{
+  font-size: 18px;
   background: red;
   padding: 10px 20px;
   width: 125px;
@@ -103,8 +134,9 @@
   text-align: center;
   color: white;
   position: relative;
+  font-weight: 100;
 }
-.plans-3-col .columns-3-cols div > div h2::after{
+.plans-3-col .columns-3-cols div > div h5::after{
   content: "";
   display: block;
   border: 1px solid #ccc;
@@ -120,8 +152,16 @@ main .plans-3-col .columns-3-cols p.button-wrapper a.button.primary {
   border-radius: 5px;
   font-size: 16px;
   padding: 12px 20px;
+  transition: 0.5s ease-in-out;
 }
 main .plans-3-col .columns-3-cols div:nth-child(2) .button-wrapper a.button.primary {
+  background-color: red;
+  color: white;
+}
+main .plans-3-col .columns-3-cols div div:nth-child(2) .button-wrapper a.button.primary:hover {
+  background: #e49814;
+}
+main .plans-3-col .columns-3-cols p.button-wrapper a.button.primary:hover {
   background-color: red;
   color: white;
 }
@@ -131,13 +171,13 @@ main .plans-3-col .default-content-wrapper {
 main .plans-3-col .default-content-wrapper h4 {
   color: red;
 }
-main .plans-3-col .default-content-wrapper h2 {
+main .plans-3-col .default-content-wrapper .columns-3-cols h5 {
   margin-bottom: 20px;
   margin-top: 0;
+  font-size: 18px;
+  font-weight: 200;
 } 
-main .plans-3-col .default-content-wrapper h2 strong {
-  color: red;
-}
+
 .contact-col-section .default-content-wrapper {
   text-align: center;
 }

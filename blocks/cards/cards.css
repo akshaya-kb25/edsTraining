@@ -36,7 +36,7 @@
   aspect-ratio: 1;
 }
 
-.cards-layout-one .cards .cards-card-image{
+.cards-layout-one .cards .cards-card-image {
   display: flex;
   justify-content: center;
 }
@@ -55,6 +55,9 @@
 }
 .cards-layout-one .cards .cards-card-body p:nth-child(2) {
   font-size: 21px;
+}
+.cards-layout-one .cards .cards-card-body p:nth-child(3){
+  font-family: 'rajdhani', sans-serif;
 }
 .cards-layout-one .cards .cards-card-body {
   display: flex;
@@ -79,6 +82,12 @@
   transition: width 0.3s ease;
   bottom: 0px;
 }
+.cards-layout-one .cards ul li:hover .cards-card-body p:first-child{
+  color: red;
+}
+.cards-layout-one .cards ul li .cards-card-body p:hover:nth-child(2){
+  color: red;
+}
 .cards-layout-one .cards ul li:hover::before {
   width: 100%;
   color: red;
@@ -92,7 +101,7 @@
   font-weight: 700;
   margin-top: 0;
 }
-.cards-layout-one .cards .cards-card-body p:hover:first-child {
+.cards-layout-one .cards .cards-card-body p:hover:first-child strong {
   color: red;
 }
 
@@ -123,6 +132,42 @@
   grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
   gap: 24px;
 
+}
+.cards-layout-two .cards ul li > * {
+  position: relative;
+  z-index: 2;
+  transition: transform 1s ease; 
+}
+.cards-layout-two .cards ul li::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 361px;
+  height: 100%;
+  background: #E49814;
+  transform: scaleY(0.01);
+  transform-origin: top;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+.cards-layout-two .cards ul li:hover {
+  transform: skew(3deg) translateX(-15px);
+  transform-origin: top left;
+}
+.cards-layout-one.cards-layout-two ul li .cards-card-body p:hover:nth-child(2) {
+  color: #fff;
+}
+.cards-layout-one.cards-layout-two ul li .cards-card-body p:hover:first-child strong{
+  color: #fff;
+}
+.cards-layout-two .cards ul li:hover .cards-card-body,
+.cards-layout-two .cards ul li:hover .cards-card-body p,
+.cards-layout-two .cards ul li:hover .cards-card-body strong {
+  color: #fff;
+}
+.cards-layout-two .cards ul li:hover::before {
+  transform: scaleY(1);
 }
 .blogs-post-section .cards ul .cards-card-body p a {
   color: black;

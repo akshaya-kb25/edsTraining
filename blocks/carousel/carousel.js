@@ -1,5 +1,37 @@
 import { fetchPlaceholders } from '../../scripts/placeholders.js';
 
+const AUTO_SCROLL_INTERVAL = 3000; 
+function startAutoScroll(block) {
+function startAutoScroll(block) {
+  if (block.autoScrollRunning) return;
+
+  const slidesWrapper = block.querySelector('.carousel-slides');
+  const speed = 0.5; // pixels per frame (increase = faster)
+
+  block.autoScrollRunning = true;
+
+  function step() {
+    if (!block.autoScrollRunning) return;
+
+    slidesWrapper.scrollLeft += speed;
+
+    const firstSlide = slidesWrapper.firstElementChild;
+    if (!firstSlide) return;
+
+    // When first slide is fully out of view, move it to the end
+    if (slidesWrapper.scrollLeft >= firstSlide.offsetWidth) {
+      slidesWrapper.append(firstSlide);
+      slidesWrapper.scrollLeft -= firstSlide.offsetWidth;
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+}
+
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
@@ -71,6 +103,12 @@ function bindEvents(block) {
   block.querySelectorAll('.carousel-slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
+  
+  block.addEventListener('mouseenter', () => stopAutoScroll(block));
+  block.addEventListener('mouseleave', () => startAutoScroll(block));
+  block.addEventListener('focusin', () => stopAutoScroll(block));
+  block.addEventListener('focusout', () => startAutoScroll(block));
+
 }
 
 function createSlide(row, slideIndex, carouselId) {
@@ -148,6 +186,7 @@ export default async function decorate(block) {
   block.prepend(container);
 
   if (!isSingleSlide) {
+    startAutoScroll(block);
     bindEvents(block);
   }
 }

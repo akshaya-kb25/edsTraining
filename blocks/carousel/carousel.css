@@ -174,7 +174,12 @@ main > .carousel-layout .carousel-wrapper {
 .carousel-layout .carousel-slide-content p.button-wrapper {
   margin: 12px 10px;
 }
-
+.carousel-layout .carousel-slide-content p.button-wrapper a {
+  transition: 0.5s ease-in-out;
+}
+.carousel-layout .carousel-slide-content p.button-wrapper a:hover {
+  background: #E49814;
+}
 .carousel-layout-two .carousel .carousel-slide {
   flex: 0 0 20%;
   gap: 40px;
